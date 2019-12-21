@@ -22,7 +22,7 @@ pipeline
         {
             steps
             {
-                sh label: '', script: 'scp /home/ubuntu/.jenkins/workspace/DeclarativePipeline/webapp/target/webapp.war ubuntu@172.31.35.155:/var/lib/tomcat8/webapps/testingapp.war'
+                sh label: '', script: 'scp /home/ubuntu/.jenkins/workspace/MultiBranch_Pipeline_loans/target/my-app.war ubuntu@172.31.35.155:/var/lib/tomcat8/webapps/testingapp.war'
             }
         }
     }
