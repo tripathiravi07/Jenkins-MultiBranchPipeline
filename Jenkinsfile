@@ -3,28 +3,28 @@ pipeline
     agent any
     stages
     {
-        stage('ContinousDownload:master')
+        stage('ContinousDownload:Master')
         {
             steps
             {
                 git 'https://github.com/tripathiravi07/Jenkins-MultiBranchPipeline.git'
             }
         }
-        stage('ContinousBuild:master')
+        stage('ContinousBuild:Master')
         {
             steps
             {
                 sh label: '', script: 'mvn package'
             }
         }
-        stage('ContinousDeployment:master')
+        stage('ContinousDeployment:Master')
         {
             steps
             {
                 sh label: '', script: 'scp /home/ubuntu/.jenkins/workspace/MultiBranch_Pipeline_master/target/my-app.war ubuntu@172.31.35.155:/var/lib/tomcat8/webapps/testapp.war'
             }
         }
-        stage('ContinousDelivery:master')
+        stage('ContinousDelivery:Master')
         {
             steps
             {
